@@ -1,0 +1,29 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% block form %}
+<form method="POST" class="">
+    {% csrf_token %}
+    <h1 class="">Criar uma conta</h1>
+    <p class="lead">Já tem conta? <strong><a href="login.html" class="">Faça login</a></strong></p>
+    <div class="row g-2">
+        <div class="col">
+            <input required name="nome" class="form-control mb-2" type="text" placeholder="Nome">
+        </div>
+        <div class="col">
+            <input required name="sobrenome" class="form-control mb-2" type="text" placeholder="Sobrenome">
+        </div>
+    </div>
+    <input required name="email" class="form-control mb-2" type="email" placeholder="e-mail">
+
+    <input required name="password1" class="form-control mb-2" type="password" placeholder="Senha">
+    <small>{{ form.password1.help_text }}</small>
+    <input required name="password2" class="form-control mb-2" type="password" placeholder="Confirmar senha">
+    <small>{{ form.password2.help_text }}</small>
+    <div class="d-grid mb-1">
+        <button type="submit" class="btn btn-dark">Cadastrar</button>
+    </div>
+</form>
+{% endblock %}
+{% block image %}
+imagem
+{% endblock %}
